@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Instagram, Linkedin, Youtube } from "lucide-react";
+import lumenLogo from "@/assets/lumen-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,9 +24,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg gradient-amber flex items-center justify-center">
-                <span className="text-primary font-bold text-lg">L</span>
-              </div>
+              <img src={lumenLogo} alt="Lumen" className="w-10 h-10 object-contain" />
               <span className="text-xl font-semibold">Lumen</span>
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
