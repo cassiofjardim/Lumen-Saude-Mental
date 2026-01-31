@@ -26,7 +26,7 @@ const TechnologySection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div>
-            <span className="inline-block text-sm font-medium text-amber-dark uppercase tracking-wider mb-4">
+            <span className="inline-block text-lg font-semibold text-amber-dark uppercase tracking-wider mb-4">
               Tecnologia
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
@@ -63,7 +63,7 @@ const TechnologySection = () => {
                   <div className="absolute top-0 left-0 right-0 h-8 bg-secondary/50 flex items-center justify-center">
                     <div className="w-20 h-5 bg-foreground rounded-full" />
                   </div>
-                  
+
                   {/* App content mockup */}
                   <div className="pt-12 px-5 pb-6 h-full flex flex-col">
                     {/* App header */}

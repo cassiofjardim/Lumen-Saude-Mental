@@ -1,5 +1,6 @@
 import { ArrowRight, FlaskConical, Target, Heart } from "lucide-react";
 import neuralVideo from "@/assets/neural-background.mp4";
+import cstLogo from "@/assets/cst-brasil-logo.png";
 
 const CSTSection = () => {
   const highlights = [
@@ -42,9 +43,15 @@ const CSTSection = () => {
         <div className="relative z-10 container-narrow mx-auto px-6 py-16 md:py-20">
           <div className="max-w-3xl mx-auto text-center">
             {/* Badge */}
-            <span className="inline-block text-sm font-medium text-amber uppercase tracking-wider mb-6">
+            <span className="inline-block text-lg font-semibold text-amber uppercase tracking-wider mb-6">
               Capacitação Profissional
             </span>
+
+            <div className="flex justify-center mb-6">
+              <div className="bg-white/95 px-4 py-2 rounded-xl shadow-sm backdrop-blur-sm">
+                <img src={cstLogo} alt="CST Brasil" className="h-14 w-auto object-contain" />
+              </div>
+            </div>
 
             {/* Title */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white text-balance leading-tight">
@@ -77,7 +84,7 @@ const CSTSection = () => {
 
             {/* CTA Button */}
             <a
-              href="https://lumen.com/cst-treinamento"
+              href="https://cstbrasil.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-cta px-8 py-4 text-base inline-flex group"
@@ -91,7 +98,7 @@ const CSTSection = () => {
         {/* Bottom fade transition */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent" />
       </div>
-    </section>
+    </section >
   );
 };
 

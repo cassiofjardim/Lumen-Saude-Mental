@@ -1,70 +1,74 @@
-import { Brain, Heart, Users, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import treatmentCst from "@/assets/treatment-cst.png";
+import treatmentActiveAging from "@/assets/treatment-active-aging.png";
+import treatmentDepression from "@/assets/treatment-depression.png";
 
 const TreatmentsSection = () => {
   const treatments = [
     {
-      icon: Brain,
-      title: "Estimulação Cognitiva",
-      description: "Programa estruturado para potencialização das funções cognitivas em idosos.",
-      highlight: "Baseado em evidências",
+      image: treatmentCst,
+      title: "Terapia de Estimulação Cognitiva (CST)",
+      description: "Intervenção psicossocial criada no Reino Unido para pessoas com demência e adaptada para a população brasileira.",
     },
     {
-      icon: Heart,
-      title: "Psicoterapia Especializada",
-      description: "Atendimento psicológico individual com foco em saúde mental do idoso.",
-      highlight: "Equipe especializada",
+      image: treatmentActiveAging,
+      title: "Estimulação Cognitiva para Idosos Saudáveis",
+      description: "Atividades que fortalecem as funções cognitivas de idosos saudáveis, protegendo de perdas associadas ao envelhecimento.",
     },
     {
-      icon: Users,
-      title: "Grupos Terapêuticos",
-      description: "Intervenções em grupo para socialização e suporte emocional.",
-      highlight: "Ambiente acolhedor",
-    },
-    {
-      icon: Sparkles,
-      title: "Neuropsicologia Clínica",
-      description: "Avaliação e reabilitação neuropsicológica com protocolos validados.",
-      highlight: "Precisão diagnóstica",
+      image: treatmentDepression,
+      title: "Intervenção Integrativa para Depressão",
+      description: "Intervenção multicomponente baseada nos tratamentos mais eficazes contra a depressão.",
     },
   ];
 
   return (
-    <section id="tratamentos" className="section-padding">
-      <div className="container-narrow mx-auto">
+    <section id="tratamentos" className="section-padding bg-slate-50">
+      <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-sm font-medium text-amber-dark uppercase tracking-wider mb-4">
-            A Solução
+          <span className="inline-block text-lg font-semibold text-amber-dark uppercase tracking-wider mb-4">
+            Nossos Tratamentos
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-            Tratamentos clínicos baseados em ciência
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 text-balance">
+            Cuidado especializado e baseado em evidências
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Oferecemos intervenções validadas cientificamente para promover saúde mental e qualidade de vida.
+          <p className="text-lg text-slate-600">
+            Conheça nossas abordagens terapêuticas desenvolvidas para promover qualidade de vida e bem-estar.
           </p>
         </div>
 
         {/* Treatment Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {treatments.map((treatment, index) => (
             <div
               key={treatment.title}
-              className="card-highlight p-8 group hover:border-amber/30 transition-all duration-300"
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-start gap-5">
-                <div className="icon-badge w-14 h-14 flex-shrink-0 group-hover:scale-105 transition-transform">
-                  <treatment.icon size={24} />
-                </div>
-                <div>
-                  <span className="inline-block text-xs font-medium text-amber-dark bg-amber/10 px-3 py-1 rounded-full mb-3">
-                    {treatment.highlight}
-                  </span>
-                  <h3 className="text-xl font-semibold mb-2">{treatment.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {treatment.description}
-                  </p>
-                </div>
+              {/* Image */}
+              <div className="relative h-64 overflow-hidden">
+                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <img
+                  src={treatment.image}
+                  alt={treatment.title}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-4 text-slate-900 group-hover:text-science transition-colors">
+                  {treatment.title}
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
+                  {treatment.description}
+                </p>
+
+                <a href="#" className="inline-flex items-center gap-2 text-science font-semibold group-hover:gap-3 transition-all duration-300 mt-auto">
+                  Saiba mais
+                  <ArrowRight size={18} />
+                </a>
               </div>
             </div>
           ))}

@@ -1,4 +1,6 @@
 import { ArrowUpRight, Award, Briefcase, Rocket } from "lucide-react";
+import faperjLogo from "@/assets/faperj-logo.png";
+import peiSeal from "@/assets/pei-seal.png";
 
 const NewsSection = () => {
   const news = [
@@ -33,7 +35,7 @@ const NewsSection = () => {
       <div className="container-narrow mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="inline-block text-sm font-medium text-amber-dark uppercase tracking-wider mb-4">
+          <span className="inline-block text-lg font-semibold text-amber-dark uppercase tracking-wider mb-4">
             Notícias
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
@@ -67,6 +69,18 @@ const NewsSection = () => {
 
               {/* Card Body */}
               <div className="p-6 flex-1 flex flex-col">
+                {item.title.includes("FAPERJ") && (
+                  <div className="mb-4 flex justify-center bg-white p-2 rounded-lg border border-gray-100">
+                    <img src={faperjLogo} alt="FAPERJ" className="h-12 w-auto object-contain" />
+                  </div>
+                )}
+                {item.title.includes("PEI") && (
+                  <div className="mb-4 flex justify-center">
+                    <div className="w-24 h-24 rounded-full bg-white shadow-sm flex items-center justify-center p-1 border border-gray-100">
+                      <img src={peiSeal} alt="Selo PEI" className="w-full h-full object-cover rounded-full" />
+                    </div>
+                  </div>
+                )}
                 <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                   {item.description}
                 </p>

@@ -23,11 +23,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm"
     >
       <div className="container-narrow mx-auto">
         <div className="flex items-center justify-between h-16 md:h-20 px-6">
@@ -35,9 +31,7 @@ const Header = () => {
           <a href="#" className="flex items-center gap-2">
             <img src={lumenLogo} alt="Lumen" className="w-10 h-10 object-contain" />
             <span
-              className={`text-xl font-semibold transition-colors ${
-                isScrolled ? "text-primary" : "text-white"
-              }`}
+              className="text-xl font-semibold transition-colors text-primary"
             >
               Lumen
             </span>
@@ -49,11 +43,7 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
-                  isScrolled
-                    ? "text-muted-foreground hover:text-primary"
-                    : "text-white/80 hover:text-white"
-                }`}
+                className="text-sm font-medium transition-colors text-muted-foreground hover:text-primary"
               >
                 {link.label}
               </a>
@@ -70,9 +60,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`md:hidden p-2 transition-colors ${
-              isScrolled ? "text-foreground" : "text-white"
-            }`}
+            className="md:hidden p-2 transition-colors text-foreground"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
