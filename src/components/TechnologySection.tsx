@@ -1,4 +1,5 @@
 import { Smartphone, Brain, BarChart3, Bell } from "lucide-react";
+import lumenLogo from "@/assets/lumen-logo.png";
 
 const TechnologySection = () => {
   const features = [
@@ -67,9 +68,7 @@ const TechnologySection = () => {
                   <div className="pt-12 px-5 pb-6 h-full flex flex-col">
                     {/* App header */}
                     <div className="text-center mb-6">
-                      <div className="w-12 h-12 mx-auto mb-3 rounded-xl gradient-amber flex items-center justify-center">
-                        <Brain size={24} className="text-primary" />
-                      </div>
+                      <img src={lumenLogo} alt="Lumen" className="w-12 h-12 mx-auto mb-3 object-contain" />
                       <h4 className="font-semibold text-sm">Lumen Care</h4>
                       <p className="text-xs text-muted-foreground">Seu treino diário</p>
                     </div>
